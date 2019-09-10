@@ -1,0 +1,18 @@
+.letters-container {
+  display: flex;
+}
+
+.letter {
+  color: white;
+  background-color: blue;
+  border-radius: 10px;
+  font-family: monospace;
+  margin: 0 5px;
+  padding: 15px;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.word {
+  margin-top: 10px;
+}
