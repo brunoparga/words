@@ -1,16 +1,15 @@
-const count = (element, collection) => {
-  return collection.filter(x => x === element).length
+const fs = require('fs');
+
+const wordInGrid = require('./in_grid')
+
+const englishWord = (word) => {
+  const allWords = fs.readFileSync('words.txt', 'utf8')
+  return allWords.split('\n').includes(word)
 }
 
-const wordInLetters = (word, letters) => {
-  return word.split('').every((letter) => {
-    return count(letter, word.split('')) <= count(letter, letters)
-  })
-}
-
-const calc = (word, letters) => {
-  if (!wordInLetters(word, letters)) { return 0 }
-  return 100
+const calc = (word, grid) => {
+  if (!wordInGrid(word, grid) || !englishWord(word)) { return 0 }
+  return word.length * 100
 }
 
 module.exports = calc
