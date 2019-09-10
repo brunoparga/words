@@ -39,10 +39,15 @@ const generateTiles = () => {
   return tiles
 }
 
-const generateLetters = () => {
-  const tiles = generateTiles()
-  const letters = Array(8).fill(undefined).map(() => _.sample(tiles))
-  return _.shuffle(letters)
+const hasVowels = (grid) => {
+  return _.difference(grid, 'AEIOU'.split('')).length < grid.length
 }
 
-module.exports = generateLetters
+const generateGrid = () => {
+  const tiles = generateTiles()
+  const grid = Array(8).fill(undefined).map(() => _.sample(tiles))
+  if (!hasVowels(grid)) { return generateGrid() }
+  return _.shuffle(grid)
+}
+
+module.exports = generateGrid
