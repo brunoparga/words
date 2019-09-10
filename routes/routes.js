@@ -1,5 +1,6 @@
 const express = require('express')
 const letters = require('../helpers/letters')
+const scoreCalc = require('../helpers/score')
 
 const router = express.Router()
 
@@ -8,9 +9,14 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/word', (req, res, next) => {
+  const word = req.body.word
+  const letters = req.body.letters.replace(/\W/gi, '')
+  const score = scoreCalc(word.toUpperCase(), letters.split(''))
+  console.log(score)
   res.render('word', {
-    word: req.body.word,
-    letters: req.body.letters.replace(/\W/gi, '')
+    word: word,
+    letters: letters,
+    score: score
   })
 })
 
