@@ -12,12 +12,8 @@ router.post('/word', (req, res, next) => {
   const word = req.body.word
   const letters = req.body.letters.replace(/\W/gi, '')
   const score = scoreCalc(word.toUpperCase(), letters.split(''))
-  console.log(score)
-  res.render('word', {
-    word: word,
-    letters: letters,
-    score: score
-  })
+  const assigns = { word: word, letters: letters, score: score }
+  res.render('word', assigns)
 })
 
 module.exports = router
