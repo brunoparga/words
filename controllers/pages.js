@@ -9,6 +9,8 @@ exports.postWord = (req, res) => {
   const { word } = req.body;
   const grid = req.body.letters.replace(/\W/gi, '');
   const score = scoreCalc(word.toUpperCase(), grid.split(''));
-  const assigns = { word, grid, score, title: "Here's your score" };
+  const assigns = {
+    word, grid, score, title: "Here's your score",
+  };
   res.render('word', assigns);
 };
