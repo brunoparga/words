@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Letters
-    link(rel="stylesheet", href="css/style.css")
-  body
-    h1 Welcome to the Letters Game!
-    .letters-container
-      each letter in letters
-        .letter #{letter}
-    form.word(action="/word", method="post")
-      input(type="text", name="word")
-      input(type="hidden", name="letters", value=letters)
-      input(type="submit")
+extends layouts/main-layout.pug
+
+block content
+  h1 Welcome to the Letters Game!
+  .letters-container
+    each letter in letters
+      .letter #{letter}
+  form.word(action="/word", method="post")
+    input(type="text", name="word")
+    input(type="hidden", name="letters", value=letters)
+    input(type="submit")

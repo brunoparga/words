@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Your word
-    link(rel="stylesheet", href="css/style.css")
-  body
-    h1 Your word: <em>#{word}</em>
-    h2 From letters:
-    .letters-container
-      each letter in grid
-        .letter #{letter}
-    if score === 0
-      h2 You did not score any points 😥
-    else
-      h2 Your score is #{score}. Well done!
-    a(href="/") Back to main page
+extends layouts/main-layout.pug
+
+block content
+  h1 Your word: <em>#{word}</em>
+  h2 From letters:
+  .letters-container
+    each letter in grid
+      .letter #{letter}
+  if score === 0
+    h2 You did not score any points 😥
+  else
+    h2 Your score is #{score}. Well done!
+  a(href="/") Back to main page
