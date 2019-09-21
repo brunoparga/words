@@ -1,11 +1,5 @@
-const count = (element, collection) => {
-  return collection.filter(x => x === element).length
-}
+const count = (element, collection) => collection.filter((x) => x === element).length;
 
-const wordInGrid = (word, grid) => {
-  return word.split('').every((letter) => {
-    return count(letter, word.split('')) <= count(letter, grid)
-  })
-}
+const wordInGrid = (word, grid) => word.split('').every((letter) => count(letter, word.split('')) <= count(letter, grid));
 
-module.exports = wordInGrid
+module.exports = wordInGrid;

@@ -10,7 +10,7 @@ html(lang="en")
     h1 Your word: <em>#{word}</em>
     h2 From letters:
     .letters-container
-      each letter in letters
+      each letter in grid
         .letter #{letter}
     if score === 0
       h2 You did not score any points 😥

@@ -27,6 +27,7 @@ const letterValues = {
   Z: 10
 }
 
-const letterValueReducer = (acc, letter) => acc + letterValues[letter]
 
-module.exports = letterValueReducer
+const letterValueReducer = (acc, letter) => acc + letterValues[letter];
+
+module.exports = letterValueReducer;

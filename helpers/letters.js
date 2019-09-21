@@ -1,11 +1,9 @@
-const times = require('lodash/times')
-const difference = require('lodash/difference')
-const sample = require('lodash/sample')
-const shuffle = require('lodash/shuffle')
+const times = require('lodash/times');
+const difference = require('lodash/difference');
+const sample = require('lodash/sample');
+const shuffle = require('lodash/shuffle');
 
 const generateTiles = () => {
-  const tiles = []
-
   const tileCount = {
     A: 9,
     B: 2,
@@ -39,18 +37,19 @@ const generateTiles = () => {
     times(tileCount[letter], () => tiles.push(letter))
   }
 
-  return tiles
-}
+  const tiles = [];
 
-const hasVowels = (grid) => {
-  return difference(grid, 'AEIOU'.split('')).length < grid.length
-}
+
+  return tiles;
+};
+
+const hasVowels = (grid) => difference(grid, 'AEIOU'.split('')).length < grid.length;
 
 const generateGrid = () => {
-  const tiles = generateTiles()
-  const grid = Array(8).fill(undefined).map(() => sample(tiles))
-  if (!hasVowels(grid)) { return generateGrid() }
-  return shuffle(grid)
-}
+  const tiles = generateTiles();
+  const grid = Array(8).fill(undefined).map(() => sample(tiles));
+  if (!hasVowels(grid)) { return generateGrid(); }
+  return shuffle(grid);
+};
 
-module.exports = generateGrid
+module.exports = generateGrid;

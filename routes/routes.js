@@ -1,7 +1,7 @@
-const router = require('express').Router()
-const pagesController = require('../controllers/pages')
+const router = require('express').Router();
+const pagesController = require('../controllers/pages');
 
-router.get('/', pagesController.getLetters)
-router.post('/word', pagesController.postWord)
+router.get('/', pagesController.getLetters);
+router.post('/word', pagesController.postWord);
 
-module.exports = router
+module.exports = router;

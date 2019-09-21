@@ -1,14 +1,14 @@
-const letters = require('../helpers/letters')
-const scoreCalc = require('../helpers/score')
+const letters = require('../helpers/letters');
+const scoreCalc = require('../helpers/score');
 
-exports.getLetters = (_req, res, _next) => {
-  res.render('letters', { letters: letters() })
-}
+exports.getLetters = (_req, res) => {
+  res.render('letters', { letters: letters() });
+};
 
-exports.postWord = (req, res, _next) => {
-  const word = req.body.word
-  const letters = req.body.letters.replace(/\W/gi, '')
-  const score = scoreCalc(word.toUpperCase(), letters.split(''))
-  const assigns = { word: word, letters: letters, score: score }
-  res.render('word', assigns)
-}
+exports.postWord = (req, res) => {
+  const { word } = req.body;
+  const grid = req.body.letters.replace(/\W/gi, '');
+  const score = scoreCalc(word.toUpperCase(), grid.split(''));
+  const assigns = { word, grid, score };
+  res.render('word', assigns);
+};

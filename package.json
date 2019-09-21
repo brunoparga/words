@@ -17,6 +17,15 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-you-dont-need-lodash-underscore": "^6.7.0",
     "nodemon": "^1.19.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:you-dont-need-lodash-underscore/compatible"
+    ]
   }
 }
