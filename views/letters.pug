@@ -2,10 +2,13 @@ extends layouts/main-layout.pug
 
 block content
   h1 Welcome to the Letters Game!
+  p In this game, you have to find the longest word you can, using only the letters given below.
+  p Using rarer letters (like 'Q') will give you more points!
   .letters-container
     each letter in letters
       .letter #{letter}
   form.word(action="/word", method="post")
-    input(type="text", name="word")
+    label(for="word") Your word:
+    input(type="text", name="word", id="word")
     input(type="hidden", name="letters", value=letters)
     input(type="submit")
