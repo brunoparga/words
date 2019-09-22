@@ -1,2 +1,3 @@
 node_modules/
-words.txt
+data/words.txt
+.vscode/

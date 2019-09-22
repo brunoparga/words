@@ -3,10 +3,13 @@ module.exports = {
     browser: true,
     commonjs: true,
     es6: true,
+    mocha:true,
     node: true,
   },
   extends: [
-    'airbnb-base',
+    'plugin:mocha/recommended',
+    'plugin:you-dont-need-lodash-underscore/compatible',
+    'airbnb-base'
   ],
   globals: {
     Atomics: 'readonly',
@@ -15,7 +18,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018,
   },
-  plugins: ['you-dont-need-lodash-underscore'],
-  rules: {
-  },
+  plugins: [
+    'mocha',
+    'you-dont-need-lodash-underscore'
+  ]
 };
