@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "An Express.JS version of a build-a-word game",
   "main": "index.js",
+  "engine": {
+    "node": "12.13.0"
+  },
   "scripts": {
     "test": "mocha",
     "start": "nodemon index.js"
