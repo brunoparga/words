@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
   },
   "author": "Bruno Parga",
   "repository": "github:brunoparga/words",
