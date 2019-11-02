@@ -8,6 +8,7 @@ module.exports = {
   },
   extends: [
     'plugin:mocha/recommended',
+    'plugin:chai-friendly/recommended',
     'plugin:you-dont-need-lodash-underscore/compatible',
     'airbnb-base'
   ],
@@ -19,7 +20,12 @@ module.exports = {
     ecmaVersion: 2018,
   },
   plugins: [
+    'chai-friendly',
     'mocha',
-    'you-dont-need-lodash-underscore'
-  ]
+    'you-dont-need-lodash-underscore',
+  ],
+  rules: {
+    "prefer-arrow-callback": 0,
+    "mocha/prefer-arrow-callback": 2,
+  }
 };
