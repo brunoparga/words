@@ -1,6 +1,6 @@
 const allWords = require('./all-words');
-const wordInGrid = require('./in_grid');
-const letterValues = require('./values');
+const wordInGrid = require('./word-in-grid');
+const letterValues = require('./letter-values');
 
 // Calculate the score for a given word and grid: 100 times the Scrabble value
 // of all letters in the word, provided the word exists in English and can be
