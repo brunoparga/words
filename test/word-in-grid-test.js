@@ -1,6 +1,6 @@
 /* eslint no-unused-vars: ["error", { "varsIgnorePattern": "should" }] */
 const should = require('chai').should();
-const inGrid = require('../helpers/in_grid');
+const inGrid = require('../helpers/word-in-grid');
 
 describe('wordInGrid', function testWordInGrid() {
   it('should return true for an empty word', function emptyWord() {

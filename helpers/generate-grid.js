@@ -1,5 +1,5 @@
 const shuffle = require('lodash/shuffle');
-const generateTiles = require('./tiles');
+const generateTiles = require('./generate-tiles');
 
 const sample = (arr) => {
   const len = (arr == null ? 0 : arr.length);
