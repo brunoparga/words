@@ -4,6 +4,5 @@ const mapValues = require('lodash/mapValues');
 let letterValues = JSON.parse(fs.readFileSync('data/letters.json'));
 letterValues = mapValues(letterValues, 'value');
 
-const letterValueReducer = (acc, letter) => acc + letterValues[letter];
-
-module.exports = letterValueReducer;
+// With .reduce, calculate the value of each letter and thus of the word
+module.exports = (acc, letter) => acc + letterValues[letter];

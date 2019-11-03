@@ -1,29 +1,23 @@
-const fs = require('fs');
-const mapValues = require('lodash/mapValues');
-const times = require('lodash/times');
-const difference = require('lodash/difference');
-const sample = require('lodash/sample');
 const shuffle = require('lodash/shuffle');
+const generateTiles = require('./tiles');
 
-const generateTiles = () => {
-  const tiles = [];
-
-  let tileCount = JSON.parse(fs.readFileSync('data/letters.json'));
-  tileCount = mapValues(tileCount, 'count');
-
-  Object.keys(tileCount).forEach((letter) => {
-    times(tileCount[letter], () => tiles.push(letter));
-  });
-
-  return tiles;
+const sample = (arr) => {
+  const len = (arr == null ? 0 : arr.length);
+  return len ? arr[Math.floor(Math.random() * len)] : undefined;
 };
 
-const hasVowels = (grid) => difference(grid, 'AEIOU'.split('')).length < grid.length;
+const vowelCount = (grid) => grid
+  .filter((letter) => 'AEIOU'.split('').includes(letter))
+  .length;
 
+// Generate a 'grid', a list of eight letters, having 3 <= n <= 5 vowels.
 const generateGrid = () => {
   const tiles = generateTiles();
-  const grid = Array(8).fill(undefined).map(() => sample(tiles));
-  if (!hasVowels(grid)) { return generateGrid(); }
+  const grid = Array(8).fill(null).map(() => sample(tiles));
+  const vowels = vowelCount(grid);
+  if (vowels < 3 || vowels > 5) {
+    return generateGrid();
+  }
   return shuffle(grid);
 };
 
