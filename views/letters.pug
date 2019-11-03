@@ -9,6 +9,7 @@ block content
       .letter #{letter}
   form.word(action="/word", method="post")
     label(for="word") Your word:
-    input(type="text", name="word", id="word")
+    input(type="text", name="word", id="word" placeholder="just start typing...")
     input(type="hidden", name="letters", value=letters)
-    input(type="submit")
+block script
+  script(src="js/typing.js")
