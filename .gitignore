@@ -1,3 +1,5 @@
 node_modules/
 .vscode/
 package-memo.txt
+tests_output/
+geckodriver.log
