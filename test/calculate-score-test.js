@@ -2,13 +2,13 @@ require('chai').should();
 
 const calculateScore = require('../helpers/calculate-score');
 
-describe('The score calculator function', function testCalculateScore() {
+describe('calculateScore', function testCalculateScore() {
   before('set up test examples', function setUpExamples() {
     this.invalidWord = 42;
     this.validWord = 'TEST';
     this.invalidGrid = 'PROTEST';
     this.validGrid = 'TESTIFY'.split('');
-    this.anotherGrid = 'BANANA'.split('')
+    this.anotherGrid = 'BANANA'.split('');
   });
 
   it('should only accept a string and a letter array as arguments',
@@ -19,7 +19,7 @@ describe('The score calculator function', function testCalculateScore() {
     });
 
   it('should score 0 if the word is not in the grid', function notInGrid() {
-    calculateScore(this.validWord, this.anotherGrid).should.equal(0)
+    calculateScore(this.validWord, this.anotherGrid).should.equal(0);
   });
 
   it('should score 0 if the word does not exist', function notAWord() {
@@ -28,6 +28,6 @@ describe('The score calculator function', function testCalculateScore() {
 
   it('should correctly score words', function correctScores() {
     calculateScore(this.validWord, this.validGrid).should.equal(400);
-    calculateScore('JAZZ', 'ZSEATJTZ'.split('')).should.equal(2900)
+    calculateScore('JAZZ', 'ZSEATJTZ'.split('')).should.equal(2900);
   });
-}); 
+});

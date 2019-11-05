@@ -5,7 +5,7 @@ chai.use(require('chai-things'));
 
 const allWords = require('../helpers/all-words');
 
-describe('The list of all words', function testAllWords() {
+describe('allWords', function testAllWords() {
   it('should be an array', function isArray() {
     allWords.should.be.an('array');
   });
