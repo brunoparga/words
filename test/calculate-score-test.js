@@ -2,7 +2,7 @@ require('chai').should();
 
 const calculateScore = require('../helpers/calculate-score');
 
-describe('The score calculator function', function testCalculateScore() {
+describe('calculateScore', function testCalculateScore() {
   before('set up test examples', function setUpExamples() {
     this.invalidWord = 42;
     this.validWord = 'TEST';
